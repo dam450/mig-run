@@ -1,0 +1,105 @@
+body {
+  background: #fafafa;
+  align-items: center;
+  justify-content: center;
+}
+
+.migs {
+  width: 66px;
+  height: 106px;
+  background-image: url(../img/miguel.png);
+  position: absolute;
+  bottom: 0;
+  /* visibility: hidden; */
+  animation: migs-run 0.3s steps(7) infinite;
+}
+
+.migs-jump {
+  width: 66px;
+  height: 106px;
+  background-image: url(../img/miguel-pulo.png);
+  position: absolute;
+  bottom: 0;
+  /* visibility: hidden; */
+  
+}
+
+@keyframes migs-run {
+  from {
+    background-position: 0px;
+  }
+  to{
+    background-position: -462px;
+  }
+}
+
+.cactus {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  bottom: 0;
+  background-image: url(../img/cactus.png);
+}
+
+.game-over {
+  text-align: center;
+  color: #666;
+  margin-top: 60px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.background {
+  /* border: #666 1px solid; */
+  position: absolute;
+  bottom: 0;
+  background-image: url(../img/background.png);
+  background-repeat: repeat-x;
+  animation: slideright 600s infinite linear;
+  width: 100%;
+  height: 200px;
+}
+
+@keyframes slideright {
+  from {
+    background-position: 70000%;
+  }
+  to{
+    background-position: 0%;
+  }
+}
+
+.cup {
+  width: 66px;
+  height: 83px;
+  background-image: url(../img/cuphead.png);
+  position: absolute;
+  bottom: 0;
+  animation: cuprun 0.3s steps(7) infinite;
+}
+
+@keyframes cuprun {
+  from {
+    background-position: 0px;
+  }
+  to{
+    background-position: -462px;
+  }
+}
+
+.jump {
+  width: 66px;
+  height: 83px;
+  background-image: url(../img/cuphead_jump.png);
+  position: absolute;
+  bottom: 0;
+  animation: cupjump 0.1s steps(8) infinite;
+}
+
+@keyframes cupjump {
+  from {
+    background-position: 0px;
+  }
+  to{
+    background-position: -528px;
+  }
+}
