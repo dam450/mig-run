@@ -1,6 +1,7 @@
 const dino = document.querySelector('.migs');
 const background = document.querySelector('.background');
 let position = 0;
+var score = 0;
 
 
 let isJumping = false;
@@ -69,10 +70,11 @@ function createCactus() {
     if (cactusPosition < -60) {
       clearInterval(leftInterval);
       background.removeChild(cactus);
+      score++;
     } else if (cactusPosition > 0 && cactusPosition < 60 && position < 60) {
       //game over
       clearInterval(leftInterval);
-      document.body.innerHTML = `<h1 class="game-over">Fim de Jogo!</h1>`
+      document.body.innerHTML = `<h1 class="game-over">Fim de Jogo!</h1><span>Você fez ${score} Pontos</span>`
     } else {
       cactusPosition -= 10;
       cactus.style.left = cactusPosition + 'px';
@@ -83,10 +85,10 @@ function createCactus() {
 }
 
 createCactus();
-document.addEventListener('keydown', handleKey);
+document.addEventListener('keydown', handleKey, false);
 
-window.addEventListener('load', function () { // on page load
-  document.body.addEventListener('touchstart', function (e) {
-    handleTouch(e)
-  }, false)
-}, false)
+window.addEventListener('load', () => {
+  document.body.addEventListener('touchstart', (e) => {
+    handleTouch(e);
+  }, false);
+}, false);
